@@ -10,17 +10,16 @@
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
 
-$numberOfToots = $attributes['numberOfToots'];
+$numberOfToots 					= $attributes['numberOfToots'];
+$cdevroe_tootfaves_instance_url = get_option('cdevroe_tootfaves_instance_url');
+$cdevroe_tootfaves_access_token = get_option('cdevroe_tootfaves_access_token');
 $block_content = '';
 
-if ( $numberOfToots > 0 ) {
+if ( ! empty( $cdevroe_tootfaves_instance_url ) && ! empty( $cdevroe_tootfaves_access_token ) && $numberOfToots > 0 ) {
 
 	$cdevroe_tootfaves_cache = get_transient( 'cdevroe_tootfaves_cache' );
 
-	if ( ! $cdevroe_tootfaves_cache ) :
-
-		$cdevroe_tootfaves_instance_url = get_option('cdevroe_tootfaves_instance_url');
-		$cdevroe_tootfaves_access_token = get_option('cdevroe_tootfaves_access_token');
+	if ( ! $cdevroe_tootfaves_cache ) :		
 
 		$cdevroe_tootfaves_query_url = $url = 'https://' . $cdevroe_tootfaves_instance_url . '/api/v1/favourites?limit=' . $numberOfToots;
 
@@ -63,7 +62,7 @@ if ( $numberOfToots > 0 ) {
 
 } else {
 
-	$block_content = '<p ' . get_block_wrapper_attributes() . '>Showing ' . esc_html( $numberOfToots ) . '</p>';
+	$block_content = '<div><p>Mastodon Favorites currently unavailable.</p></div>';
 }
 
 echo wp_kses_post( $block_content );

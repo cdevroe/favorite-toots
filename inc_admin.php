@@ -1,4 +1,7 @@
 <?php
+/**
+ * Functions used for the WordPress Admin Settings page
+ */
 
 function cdevroe_tootfaves_add_admin_menu() {
     if ( !is_admin() ) return;
@@ -7,13 +10,11 @@ function cdevroe_tootfaves_add_admin_menu() {
 }
 add_action('admin_menu', 'cdevroe_tootfaves_add_admin_menu');
 
-
-// Function to display the settings page
 function cdevroe_tootfaves_settings_page() {
     ?>
     <div class="wrap">
         <h1>Mastodon Favorites Settings</h1>
-        <p>Please enter your Mastodon Instance URL and Access Token to enable the Mastodon Favorites plugin. Without doing so, the Block and Shortcode will show "Mastodon Favorites currently unavailable.".</p>
+        <p>Please enter your Mastodon Instance URL and Access Token to enable the Mastodon Favorites plugin. Without doing so, the Block will show "Mastodon Favorites currently unavailable.".</p>
         <form method="post" action="options.php">
             <?php
             settings_fields("cdevroe_tootfaves_options");

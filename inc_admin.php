@@ -15,6 +15,7 @@ function cdevroe_tootfaves_settings_page() {
     <div class="wrap">
         <h1>Mastodon Favorites Settings</h1>
         <p>Please enter your Mastodon Instance URL and Access Token to enable the Mastodon Favorites plugin. Without doing so, the Block will show "Mastodon Favorites currently unavailable.".</p>
+        
         <form method="post" action="options.php">
             <?php
             settings_fields("cdevroe_tootfaves_options");
@@ -44,9 +45,6 @@ function cdevroe_tootfaves_settings_page() {
     <?php
 }
 
-// Hook for adding settings
-add_action('admin_init', 'cdevroe_tootfaves_settings_init');
-
 function cdevroe_tootfaves_settings_init(){
     register_setting("cdevroe_tootfaves_options", "cdevroe_tootfaves_access_token");
     register_setting("cdevroe_tootfaves_options", "cdevroe_tootfaves_instance_url");
@@ -57,6 +55,7 @@ function cdevroe_tootfaves_settings_init(){
     add_settings_field("cdevroe_tootfaves_access_token", "Mastodon Access Token", "cdevroe_tootfaves_display_access_token", "cdevroe_tootfaves_options", "cdevroe_tootfaves_section");
     
 }
+add_action('admin_init', 'cdevroe_tootfaves_settings_init');
 
 function cdevroe_tootfaves_display_access_token() {
     ?>
@@ -66,6 +65,6 @@ function cdevroe_tootfaves_display_access_token() {
 
 function cdevroe_tootfaves_display_instance_url() {
     ?>
-    <input type="text" name="cdevroe_tootfaves_instance_url" id="cdevroe_tootfaves_instance_url" value="<?php echo get_option('cdevroe_tootfaves_instance_url'); ?>" />
+    <input type="text" placeholder="social.lol" name="cdevroe_tootfaves_instance_url" id="cdevroe_tootfaves_instance_url" value="<?php echo get_option('cdevroe_tootfaves_instance_url'); ?>" />
     <?php
 }

@@ -9,18 +9,12 @@
 	"example": {},
 	"attributes": {
 		"numberOfToots": {
-			"type": "integer"
+			"type": "integer",
+			"default": 5
 		}
 	},
 	"supports": {
-		"color": {
-			"background": false,
-			"text": true
-		},
-		"html": false,
-		"typography": {
-			"fontSize": true
-		}
+		"html": false
 	},
 	"textdomain": "cdevroe",
 	"editorScript": "file:./index.js",

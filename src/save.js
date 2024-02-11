@@ -40,5 +40,5 @@ export default function save( { attributes } ) {
 	// 	displayDate = fallbackCurrentYear;
 	// }
 
-	return <p { ...useBlockProps.save() }><strong>Mastodon Favorites:</strong> Will display { numberOfToots } toots</p>;
+	return <div { ...useBlockProps.save() }><strong>Mastodon Favorites:</strong> Will display { numberOfToots } toots</div>;
 }

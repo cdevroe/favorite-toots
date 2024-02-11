@@ -1,5 +1,7 @@
 # Mastodon Favorites WordPress Plugin
 
+This plugin should be considered beta. Coming soon to the WordPress Plugin directory.
+
 Add a list of your favorite toots on Mastodon to any page on your website using a block or shortcode.
 
 ## Version History

@@ -4,11 +4,8 @@ import Edit from './edit';
 import save from './save';
 import metadata from './block.json';
 
-/**
- * Define a custom SVG icon for the block. This icon will appear in
- * the Inserter and when the user selects the block in the Editor.
- */
-const listIcon = (
+
+const mastodonIcon = (
 	<svg
 		viewBox="0 0 24 24"
 		xmlns="http://www.w3.org/2000/svg"
@@ -19,13 +16,8 @@ const listIcon = (
 	</svg>
 );
 
-/**
- * Every block starts by registering a new block type definition.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
- */
 registerBlockType( metadata.name, {
-	icon: listIcon,
+	icon: mastodonIcon,
 	/**
 	 * @see ./edit.js
 	 */

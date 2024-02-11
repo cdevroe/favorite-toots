@@ -68,3 +68,9 @@ function cdevroe_tootfaves_display_instance_url() {
     <input type="text" placeholder="social.lol" name="cdevroe_tootfaves_instance_url" id="cdevroe_tootfaves_instance_url" value="<?php echo get_option('cdevroe_tootfaves_instance_url'); ?>" />
     <?php
 }
+
+// TODO: Can this be removed? Isn't the build process supposed to do this automatically since this file is reference in block.json?
+function cdevroe_tootfaves_add_editor_styles() {
+    add_editor_style( plugin_dir_url( __FILE__ ) . '/assets/css/editor.css');
+}
+add_action('init', 'cdevroe_tootfaves_add_editor_styles');

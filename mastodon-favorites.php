@@ -60,7 +60,6 @@ function cdevroe_tootfaves_allow_iframes( $allowed_tags ){
 }
 add_filter( 'wp_kses_allowed_html', 'cdevroe_tootfaves_allow_iframes', 1 );
 
-
 /** 
  * Enqueue JavaScript needed to adjust height of iframes
  */

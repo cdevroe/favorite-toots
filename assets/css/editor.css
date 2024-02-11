@@ -1,0 +1,8 @@
+/* Editor styles, this file may get moved back in /src/ in the future */
+
+.wp-block-cdevroe-mastodon-favorites {
+    height: 175px;
+    padding-top: 25%;
+    background-color: #bbbbbb;
+    text-align: center;
+}

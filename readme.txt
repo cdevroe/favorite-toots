@@ -51,6 +51,8 @@ I welcome feedback, code, and feature suggestions! You can submit a thread to th
 * Multiple instances of the block will now cache independently
 * Updating a Mastodon Favorites Block's settings will destroy that instance of the Block's cache
 * Updated the text-domain per WordPress.org "Plugin Check" test results.
+* Fixed temporary Editor Block icon SVG
+* New styling for Editor Block in the Editor
 
 = 0.1.0 =
 * Release

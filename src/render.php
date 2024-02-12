@@ -8,20 +8,16 @@
  * $block (WP_Block): The block instance.
  *
  */
-
-if ( is_admin() ) die(); // Is this cool to do? Rendering that not need to happen at all in the Admin.
-
 $numberOfToots 						= $attributes['numberOfToots'];
 $cdevroe_tootfaves_instance_url 	= get_option('cdevroe_tootfaves_instance_url');
 $cdevroe_tootfaves_access_token 	= get_option('cdevroe_tootfaves_access_token');
 $block_content 						= '';
-global $post; // Is this cool to do?
-$cdevroe_tootfaves_current_post_id 	= $post->ID;
 
+if ( ! empty( $cdevroe_tootfaves_instance_url ) && ! empty( $cdevroe_tootfaves_access_token ) && $numberOfToots > 0 && ! is_admin() ) {
 
-if ( ! empty( $cdevroe_tootfaves_instance_url ) && ! empty( $cdevroe_tootfaves_access_token ) && $numberOfToots > 0 ) {
-
-	$cdevroe_tootfaves_cache = get_transient( 'cdevroe_tootfaves_cache_' . $cdevroe_tootfaves_current_post_id );
+	global $post; // Is this cool to do?
+	$cdevroe_tootfaves_current_post_id 	= $post->ID;
+	$cdevroe_tootfaves_cache 			= get_transient( 'cdevroe_tootfaves_cache_' . $cdevroe_tootfaves_current_post_id );
 
 	if ( ! $cdevroe_tootfaves_cache ) :		
 
@@ -69,9 +65,10 @@ if ( ! empty( $cdevroe_tootfaves_instance_url ) && ! empty( $cdevroe_tootfaves_a
 	endif;
 
 } else {
-
 	$block_content = '<div ' . get_block_wrapper_attributes() . '><p>Mastodon Favorites currently unavailable.</p></div>';
 }
+
+echo wp_kses_post( $block_content );
 
 /**
  * Parse out the instance of origin from a toot URL
@@ -90,5 +87,3 @@ function cdevroe_tootfaves_get_instance_from_toot_url( $toot_url = null ) {
 		return false;
 	}
 }
-
-echo wp_kses_post( $block_content );

@@ -29,5 +29,5 @@ export default function save( { attributes } ) {
 		return null;
 	}
 
-	return <div { ...useBlockProps.save() }><strong>Mastodon Favorites:</strong> Will display { numberOfToots } toots</div>;
+	return <div { ...useBlockProps.save() }><strong>Mastodon Favorites</strong></div>;
 }

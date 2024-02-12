@@ -24,6 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function cdevroe_tootfaves_init() {
 	require __DIR__ . '/inc_admin.php';
+	require __DIR__ . '/inc_ajax.php';
 	register_block_type( __DIR__ . '/build' );
 }
 add_action( 'init', 'cdevroe_tootfaves_init' );

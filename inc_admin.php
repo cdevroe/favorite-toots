@@ -71,16 +71,17 @@ function cdevroe_tootfaves_display_instance_url() {
 
 // TODO: Can this be removed? Isn't the build process supposed to do this automatically since this file is reference in block.json?
 function cdevroe_tootfaves_add_editor_styles() {
-    add_editor_style( plugin_dir_url( __FILE__ ) . '/assets/css/editor.css');
-}
-add_action('init', 'cdevroe_tootfaves_add_editor_styles');
+	global $pagenow;
 
-add_action( 'wp_ajax_cdevroe_tootfaves_destroy_cache', 'cdevroe_tootfaves_destroy_cache' );
-//add_action('wp_ajax_nopriv_delete_my_transient', 'my_delete_transient_function'); // For non-logged-in users
+	if ($pagenow != 'post.php') {
+		return;
+	}
 
-function cdevroe_tootfaves_destroy_cache() {
-    if ( isset($_POST['postID']) ) {
-        delete_transient( 'cdevroe_tootfaves_cache_' . $_POST['postID'] );
-    }
-    wp_die();
+    $cdevroe_tootfaves_data = get_plugin_data( __FILE__ );
+	
+	// loading css
+    wp_register_style( 'mastodon-favorites-editor-style', plugin_dir_url( __FILE__ ) . '/assets/css/editor.css', false, $cdevroe_tootfaves_data['Version'] );
+    wp_enqueue_style( 'mastodon-favorites-editor-style' );
 }
+add_action( 'admin_enqueue_scripts', 'cdevroe_tootfaves_add_editor_styles' );
+

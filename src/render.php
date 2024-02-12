@@ -9,14 +9,19 @@
  *
  */
 
-$numberOfToots 					= $attributes['numberOfToots'];
-$cdevroe_tootfaves_instance_url = get_option('cdevroe_tootfaves_instance_url');
-$cdevroe_tootfaves_access_token = get_option('cdevroe_tootfaves_access_token');
-$block_content = '';
+if ( is_admin() ) die(); // Is this cool to do? Rendering that not need to happen at all in the Admin.
+
+$numberOfToots 						= $attributes['numberOfToots'];
+$cdevroe_tootfaves_instance_url 	= get_option('cdevroe_tootfaves_instance_url');
+$cdevroe_tootfaves_access_token 	= get_option('cdevroe_tootfaves_access_token');
+$block_content 						= '';
+global $post; // Is this cool to do?
+$cdevroe_tootfaves_current_post_id 	= $post->ID;
+
 
 if ( ! empty( $cdevroe_tootfaves_instance_url ) && ! empty( $cdevroe_tootfaves_access_token ) && $numberOfToots > 0 ) {
 
-	$cdevroe_tootfaves_cache = get_transient( 'cdevroe_tootfaves_cache' );
+	$cdevroe_tootfaves_cache = get_transient( 'cdevroe_tootfaves_cache_' . $cdevroe_tootfaves_current_post_id );
 
 	if ( ! $cdevroe_tootfaves_cache ) :		
 
@@ -52,11 +57,11 @@ if ( ! empty( $cdevroe_tootfaves_instance_url ) && ! empty( $cdevroe_tootfaves_a
 
 				if ( ! isset( $get_favorite_embed_json['html'] ) || is_null( $get_favorite_embed_json['html'] ) || '' == $get_favorite_embed_json['html'] ) continue;
 				
-				$block_content .= '<div>' . $get_favorite_embed_json['html'] . '</div>';
+				$block_content .= '<div class="mastodon-favorites-toot-iframe-wrapper">' . $get_favorite_embed_json['html'] . '</div>';
 
 			}
 
-			set_transient( 'cdevroe_tootfaves_cache', $block_content,  21600 ); // Cache results for 6 hours
+			set_transient( 'cdevroe_tootfaves_cache_' . $cdevroe_tootfaves_current_post_id, $block_content,  21600 ); // Cache results for 6 hours
 		} // endif wp_error
 	
 	else :

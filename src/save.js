@@ -1,17 +1,8 @@
 /**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps } from '@wordpress/block-editor';
 
 /**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
  *
  * @param {Object} props            Properties passed to the function.
  * @param {Object} props.attributes Available block attributes.
@@ -20,25 +11,23 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 export default function save( { attributes } ) {
 	const { numberOfToots } = attributes;
-	// // If there is no fallbackCurrentYear, which could happen if the block
-	// // is loaded from a template/pattern, return null. In this case, block
-	// // rendering will be handled by the render.php file.
 
+	/**
+	 * Whenever a save happens, delete the cache
+	 * TODO: Update this to only trigger when the settings for the block change
+	*/
+	const postID = wp.data.select('core/editor').getCurrentPostId();
+    fetch('/wp-admin/admin-ajax.php', {
+        method: 'POST',
+        body: new URLSearchParams({
+            action: 'cdevroe_tootfaves_destroy_cache',
+			postID: postID
+        }),
+    });
+	
 	if ( numberOfToots < 1 ) {
 		return null;
 	}
-	// if ( ! fallbackCurrentYear ) {
-	// 	return null;
-	// }
-
-	// let displayDate;
-
-	// // Display the starting year as well if supplied by the user.
-	// if ( showStartingYear && startingYear ) {
-	// 	displayDate = startingYear + '–' + fallbackCurrentYear;
-	// } else {
-	// 	displayDate = fallbackCurrentYear;
-	// }
 
 	return <div { ...useBlockProps.save() }><strong>Mastodon Favorites:</strong> Will display { numberOfToots } toots</div>;
 }

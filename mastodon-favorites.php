@@ -3,14 +3,14 @@
  * Plugin Name:       Mastodon Favorites
  * Description:       Add a list of your favorite toots from Mastodon to your website using a Gutenberg Block or a shortcode.
  * Plugin URI: 		  https://cdevroe.com/projects/mastodon-favorites
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.2
  * Requires PHP:      7.0
  * Author:            Colin Devroe
  * Author URI:		  https://cdevroe.com/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       cdevroe
+ * Text Domain:       mastodon-favorites
  *
  */
 

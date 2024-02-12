@@ -6,13 +6,13 @@ Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin should be considered beta. Please send bug reports, feedback, and questions to GitHub or on Mastodon.
+**This plugin should be considered beta.**
 
-Add a list of your favorite toots on Mastodon to any page on your website using a block or shortcode.
+Add a list of your favorite toots on Mastodon to any page on your website using a block.
 
 == Description ==
 
-Add a list of your favorite toots on Mastodon to any page on your website using a block or shortcode.
+Add a list of your favorite toots on Mastodon to any page on your website using a block.
 
 == Installation ==
 
@@ -37,21 +37,27 @@ Your Mastodon instance URL is usually the domain name that appears in your usern
 8. Click Save.
 9. Copy and paste your "Access Token" into the settings of your Mastodon Favorites plugin.
 
+= Where can I provide feedback? =
+
+I welcome feedback, code, and feature suggestions! You can submit a thread to the WordPress Support Forums or on GitHub has an issue.
+
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Coming soon
 
 == Changelog ==
+
+= 0.2.0 =
+* Multiple instances of the block will now cache independently
+* Updating a Mastodon Favorites Block's settings will destroy that instance of the Block's cache
+* Updated the text-domain per WordPress.org "Plugin Check" test results.
 
 = 0.1.0 =
 * Release
 
-== Arbitrary section ==
+== About this Plugin ==
 
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
+One of the primary ways I find new accounts to follow on social media is by eavesdropping on
+other people’s favorites. Many social networks make each account’s favorites public but
+Mastodon does not (yet?). So I wanted a way to show my favorites publicly so that others can
+look through them. And I’m hoping others make theirs available too. - [Colin Devroe](https://cdevroe.com/)

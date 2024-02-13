@@ -21,7 +21,8 @@ export default function save( { attributes } ) {
         method: 'POST',
         body: new URLSearchParams({
             action: 'cdevroe_tootfaves_destroy_cache',
-			postID: postID
+			postID: postID,
+			nonce: cdevroe_tootfaves_ajax.nonce, 
         }),
     });
 	

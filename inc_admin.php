@@ -84,4 +84,3 @@ function cdevroe_tootfaves_add_editor_styles() {
     wp_enqueue_style( 'mastodon-favorites-editor-style' );
 }
 add_action( 'admin_enqueue_scripts', 'cdevroe_tootfaves_add_editor_styles' );
-

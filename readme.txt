@@ -2,7 +2,7 @@
 Contributors:      cdevroe
 Tags:              block, mastodon, shortcode
 Tested up to:      6.4
-Stable tag:        0.1.0
+Stable tag:        0.2.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,9 @@ I welcome feedback, code, and feature suggestions! You can submit a thread to th
 1. Coming soon
 
 == Changelog ==
+
+= 0.2.1 =
+* Added nonce check to cache buster during Block settings update
 
 = 0.2.0 =
 * Multiple instances of the block will now cache independently

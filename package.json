@@ -1,6 +1,6 @@
 {
 	"name": "mastodon-favorites",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Add a list of your favorite toots from Mastodon to your website using a Gutenberg Block or a shortcode.",
 	"author": "Colin Devroe",
 	"license": "GPL-2.0-or-later",

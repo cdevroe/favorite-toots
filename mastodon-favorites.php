@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Mastodon Favorites
- * Description:       Add a list of your favorite toots from Mastodon to your website using a Gutenberg Block or a shortcode.
+ * Description:       Add embeds of your favorite toots from Mastodon to your website using an Editor Block.
  * Plugin URI: 		  https://cdevroe.com/projects/mastodon-favorites
  * Version:           0.2.1
  * Requires at least: 6.2

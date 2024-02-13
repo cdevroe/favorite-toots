@@ -2,21 +2,21 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "cdevroe/mastodon-favorites",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"title": "Mastodon Favorites",
 	"category": "widgets",
-	"description": "Add a list of your favorite toots from Mastodon to your website using a Gutenberg Block or a shortcode.",
+	"description": "Adds embeds of your favorite toots from Mastodon.",
 	"example": {},
 	"attributes": {
 		"numberOfToots": {
-			"type": "integer",
-			"default": 5
+			"type": "string",
+			"default": "5"
 		}
 	},
 	"supports": {
 		"html": false
 	},
-	"textdomain": "cdevroe",
+	"textdomain": "mastodon-favorites",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./editor.css",
 	"style": "file:./style-index.css",

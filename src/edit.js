@@ -14,22 +14,20 @@ import { useEffect } from 'react';
 export default function Edit( { attributes, setAttributes } ) {
 	const { numberOfToots } = attributes;
 
-	if ( numberOfToots < 1 ) numberOfToots = 1; // do not allow less than 1, and default to 1
-
 	useEffect( () => {
 		if ( numberOfToots > 0 ) {
 			setAttributes( { numberOfToots: numberOfToots } );
 		}
-	}, [ setAttributes ] );
+	}, [ numberOfToots, setAttributes ] );
 
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={ __( 'Settings', 'cdevroe' ) }>
+				<PanelBody title={ __( 'Settings', 'mastodon-favorites' ) }>
 					<SelectControl
 						label={ __(
 							'Number of toots to show',
-							'cdevroe'
+							'mastodon-favorites'
 						) }
 						value={ numberOfToots }
 						options={ [

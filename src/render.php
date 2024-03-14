@@ -1,6 +1,6 @@
 <?php
 /**
- * Renders Mastodon Favorites block output
+ * Renders the Favorite Toots block output
  * Uses each toot favorite URL to request an oEmbed iframe
  *
  * $attributes (array): The block attributes.
@@ -53,7 +53,7 @@ if ( ! empty( $cdevroe_tootfaves_instance_url ) && ! empty( $cdevroe_tootfaves_a
 
 				if ( ! isset( $get_favorite_embed_json['html'] ) || is_null( $get_favorite_embed_json['html'] ) || '' == $get_favorite_embed_json['html'] ) continue;
 				
-				$block_content .= '<div class="mastodon-favorites-toot-iframe-wrapper">' . $get_favorite_embed_json['html'] . '</div>';
+				$block_content .= '<div class="favorite-toots-toot-iframe-wrapper">' . $get_favorite_embed_json['html'] . '</div>';
 
 			}
 

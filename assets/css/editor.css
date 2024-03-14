@@ -1,13 +1,13 @@
 /* Editor styles, this file may get moved back in /src/ in the future */
 
-.wp-block-cdevroe-mastodon-favorites {
+.wp-block-cdevroe-favorite-toots {
     position: relative;
     height: 175px;
     background-color: #bbbbbb;
     text-align: center;
 }
 
-.wp-block-cdevroe-mastodon-favorites strong {
+.wp-block-cdevroe-favorite-toots strong {
     margin: 0;
     position: absolute;
     top: 50%;

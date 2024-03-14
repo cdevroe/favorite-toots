@@ -23,11 +23,11 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={ __( 'Settings', 'mastodon-favorites' ) }>
+				<PanelBody title={ __( 'Settings', 'favorite-toots' ) }>
 					<SelectControl
 						label={ __(
 							'Number of toots to show',
-							'mastodon-favorites'
+							'favorite-toots'
 						) }
 						value={ numberOfToots }
 						options={ [

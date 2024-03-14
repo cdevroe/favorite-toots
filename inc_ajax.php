@@ -23,8 +23,8 @@ function cdevroe_tootfaves_setup_nonce() {
 
     $cdevroe_tootfaves_data = get_plugin_data( __FILE__ );
 
-    wp_enqueue_script( 'admin-mastodon-favorites', plugin_dir_url( __FILE__ ) . '/assets/js/admin-cdevroe-mastodon-favorites.js', array(), $cdevroe_tootfaves_data['Version'], true );
-    wp_localize_script('admin-mastodon-favorites', 'cdevroe_tootfaves_ajax', array(
+    wp_enqueue_script( 'admin-favorite-toots', plugin_dir_url( __FILE__ ) . '/assets/js/admin-cdevroe-favorite-toots.js', array(), $cdevroe_tootfaves_data['Version'], true );
+    wp_localize_script('admin-favorite-toots', 'cdevroe_tootfaves_ajax', array(
         'url' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('cdevroe_tootfaves_ajax_nonce')
     ));

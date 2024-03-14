@@ -1,4 +1,4 @@
-# Mastodon Favorites WordPress Plugin
+# Favorite Toots WordPress Plugin
 
 **This plugin should be considered beta.**
 
@@ -17,7 +17,7 @@ See Changelog in readme.txt
 
 ## License
 
-Mastodon Favorites is released under the terms of [the GNU General Public License version 2](https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html).
+Favorite Toots is released under the terms of [the GNU General Public License version 2](https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html).
 
 ## Support
 

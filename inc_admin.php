@@ -6,9 +6,9 @@
 function cdevroe_tootfaves_add_admin_menu() {
     if ( !is_admin() ) return;
 
-    add_options_page(__('Mastodon Favorites','mastodon-favorites'), __('Mastodon Favorites','mastodon-favorites'), 'manage_options', 'mastodon-favorites', 'cdevroe_tootfaves_settings_page');
+    add_options_page(__('Favorite Toots','favorite-toots'), __('Favorite Toots','favorite-toots'), 'manage_options', 'favorite-toots', 'cdevroe_tootfaves_settings_page');
 }
-add_action('admin_menu', 'cdevroe_tootfaves_add_admin_menu');
+add_action( 'admin_menu', 'cdevroe_tootfaves_add_admin_menu' );
 
 function cdevroe_tootfaves_settings_page() {
     ?>
@@ -80,7 +80,7 @@ function cdevroe_tootfaves_add_editor_styles() {
     $cdevroe_tootfaves_data = get_plugin_data( __FILE__ );
 	
 	// loading css
-    wp_register_style( 'mastodon-favorites-editor-style', plugin_dir_url( __FILE__ ) . '/assets/css/editor.css', false, $cdevroe_tootfaves_data['Version'] );
-    wp_enqueue_style( 'mastodon-favorites-editor-style' );
+    wp_register_style( 'favorite-toots-editor-style', plugin_dir_url( __FILE__ ) . '/assets/css/editor.css', false, $cdevroe_tootfaves_data['Version'] );
+    wp_enqueue_style( 'favorite-toots-editor-style' );
 }
 add_action( 'admin_enqueue_scripts', 'cdevroe_tootfaves_add_editor_styles' );

@@ -2,5 +2,5 @@ node_modules
 .DS_Store
 build
 hidden
-mastodon-favorites.zip
-mastodon-favorites
+favorite-toots.zip
+favorite-toots

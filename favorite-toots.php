@@ -1,16 +1,16 @@
 <?php
 /**
- * Plugin Name:       Mastodon Favorites
+ * Plugin Name:       Favorite Toots
  * Description:       Add embeds of your favorite toots from Mastodon to your website using an Editor Block.
- * Plugin URI: 		  https://cdevroe.com/projects/mastodon-favorites
- * Version:           0.2.1
+ * Plugin URI: 		  https://cdevroe.com/projects/favorite-toots
+ * Version:           0.2.2
  * Requires at least: 6.2
  * Requires PHP:      7.0
  * Author:            Colin Devroe
  * Author URI:		  https://cdevroe.com/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       mastodon-favorites
+ * Text Domain:       favorite-toots
  *
  */
 
@@ -66,6 +66,6 @@ add_filter( 'wp_kses_allowed_html', 'cdevroe_tootfaves_allow_iframes', 1 );
  */
 function cdevroe_tootfaves_enqueue_scripts( ) {
 	$cdevroe_tootfaves_data = get_plugin_data( __FILE__ );
-	wp_enqueue_script( 'cdevroe_tootfaves_javascript', plugin_dir_url( __FILE__ ) . '/assets/js/cdevroe-mastodon-favorites.js', array(), $cdevroe_tootfaves_data['Version'], true );
+	wp_enqueue_script( 'cdevroe_tootfaves_javascript', plugin_dir_url( __FILE__ ) . '/assets/js/cdevroe-favorite-toots.js', array(), $cdevroe_tootfaves_data['Version'], true );
 }
 add_action( 'wp_enqueue_scripts', 'cdevroe_tootfaves_enqueue_scripts' );

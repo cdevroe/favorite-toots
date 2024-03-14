@@ -1,8 +1,8 @@
-=== Mastodon Favorites ===
+=== Favorite Toots ===
 Contributors:      cdevroe
 Tags:              block, mastodon, shortcode
 Tested up to:      6.4
-Stable tag:        0.2.1
+Stable tag:        0.2.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ Add a list of your favorite toots on Mastodon to any page on your website using 
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/cdevroe-mastodon-favorites` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/cdevroe-favorite-toots` directory, or install the plugin through the WordPress plugins screen directly.
 1. Activate the plugin through the 'Plugins' screen in WordPress
 
 == Frequently Asked Questions ==
@@ -30,7 +30,7 @@ Your Mastodon instance URL is usually the domain name that appears in your usern
 1. Log into your Mastodon instance.
 2. Click Preferences > Development
 3. Choose "New application"
-4. Application name: Mastodon Favorites WordPress
+4. Application name: Favorite Toots WordPress
 5. Application Website: Your website URL
 6. Redirect URI: (leave as-is)
 7. Scopes: read:bookmarks read:favourites read:statuses
@@ -46,6 +46,9 @@ I welcome feedback, code, and feature suggestions! You can submit a thread to th
 1. Coming soon
 
 == Changelog ==
+
+= 0.2.2 =
+* Renamed to Favorite Toots
 
 = 0.2.1 =
 * Added nonce check to cache buster during Block settings update

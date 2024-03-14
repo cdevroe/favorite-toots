@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "cdevroe/mastodon-favorites",
-	"version": "0.2.1",
-	"title": "Mastodon Favorites",
+	"name": "cdevroe/favorite-toots",
+	"version": "0.2.2",
+	"title": "Favorite Toots",
 	"category": "widgets",
 	"description": "Adds embeds of your favorite toots from Mastodon.",
 	"example": {},
@@ -16,7 +16,7 @@
 	"supports": {
 		"html": false
 	},
-	"textdomain": "mastodon-favorites",
+	"textdomain": "favorite-toots",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./editor.css",
 	"style": "file:./style-index.css",

@@ -9,7 +9,7 @@
  *
  */
 $numberOfToots 						= $attributes['numberOfToots'];
-$cdevroe_tootfaves_instance_url 	= esc_url( get_option('cdevroe_tootfaves_instance_url') );
+$cdevroe_tootfaves_instance_url 	= esc_attr( get_option('cdevroe_tootfaves_instance_url') );
 $cdevroe_tootfaves_access_token 	= esc_attr( get_option('cdevroe_tootfaves_access_token') );
 $block_content 						= '';
 

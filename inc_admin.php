@@ -60,13 +60,13 @@ add_action('admin_init', 'cdevroe_tootfaves_settings_init');
 
 function cdevroe_tootfaves_display_access_token() {
     ?>
-    <input type="text" name="cdevroe_tootfaves_access_token" id="cdevroe_tootfaves_access_token" value="<?php esc_attr( get_option('cdevroe_tootfaves_access_token') ); ?>" />
+    <input type="text" name="cdevroe_tootfaves_access_token" id="cdevroe_tootfaves_access_token" value="<?php echo esc_attr( get_option('cdevroe_tootfaves_access_token') ); ?>" />
     <?php
 }
 
 function cdevroe_tootfaves_display_instance_url() {
     ?>
-    <input type="text" placeholder="social.lol" name="cdevroe_tootfaves_instance_url" id="cdevroe_tootfaves_instance_url" value="<?php esc_url( get_option('cdevroe_tootfaves_instance_url') ); ?>" />
+    <input type="text" placeholder="social.lol" name="cdevroe_tootfaves_instance_url" id="cdevroe_tootfaves_instance_url" value="<?php echo esc_url( get_option('cdevroe_tootfaves_instance_url') ); ?>" />
     <?php
 }
 

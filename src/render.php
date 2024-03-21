@@ -9,8 +9,8 @@
  *
  */
 $numberOfToots 						= $attributes['numberOfToots'];
-$cdevroe_tootfaves_instance_url 	= get_option('cdevroe_tootfaves_instance_url');
-$cdevroe_tootfaves_access_token 	= get_option('cdevroe_tootfaves_access_token');
+$cdevroe_tootfaves_instance_url 	= esc_url( get_option('cdevroe_tootfaves_instance_url') );
+$cdevroe_tootfaves_access_token 	= esc_attr( get_option('cdevroe_tootfaves_access_token') );
 $block_content 						= '';
 
 if ( ! empty( $cdevroe_tootfaves_instance_url ) && ! empty( $cdevroe_tootfaves_access_token ) && $numberOfToots > 0 && ! is_admin() ) {
@@ -65,7 +65,7 @@ if ( ! empty( $cdevroe_tootfaves_instance_url ) && ! empty( $cdevroe_tootfaves_a
 	endif;
 
 } else {
-	$block_content = '<div ' . get_block_wrapper_attributes() . '><p>Mastodon Favorites currently unavailable.</p></div>';
+	$block_content = '<div ' . get_block_wrapper_attributes() . '><p>Favorite Toots currently unavailable.</p></div>';
 }
 
 echo wp_kses_post( $block_content );

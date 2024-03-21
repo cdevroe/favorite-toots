@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 /**
  * Functions used for the WordPress Admin Settings page
  */
@@ -13,8 +14,8 @@ add_action( 'admin_menu', 'cdevroe_tootfaves_add_admin_menu' );
 function cdevroe_tootfaves_settings_page() {
     ?>
     <div class="wrap">
-        <h1>Mastodon Favorites Settings</h1>
-        <p>Please enter your Mastodon Instance URL and Access Token to enable the Mastodon Favorites plugin. Without doing so, the Block will show "Mastodon Favorites currently unavailable.".</p>
+        <h1>Favorite Toots Settings</h1>
+        <p>Please enter your Mastodon instance URL and Access Token to enable the Favorite Toots plugin. Without doing so, the Block will show "Favorite Toots currently unavailable.".</p>
         
         <form method="post" action="options.php">
             <?php
@@ -34,12 +35,12 @@ function cdevroe_tootfaves_settings_page() {
             <li>Log into your Mastodon instance.</li>
             <li>Click Preferences > Development</li>
             <li>Choose "New application"</li>
-            <li>Application name: Mastodon Favorites WordPress</li>
+            <li>Application name: Favorite Toots WordPress</li>
             <li>Application Website: Your website URL</li>
             <li>Redirect URI: (leave as-is)</li>
             <li>Scopes: read:bookmarks read:favourites read:statuses</li>
             <li>Click Save.</li>
-            <li>Copy and paste your "Access Token" into the settings of your Mastodon Favorites plugin.</li>
+            <li>Copy and paste your "Access Token" into the settings of your Favorite Toots plugin at Settings > Favorite Toots.</li>
         </ol>
     </div>
     <?php
@@ -59,13 +60,13 @@ add_action('admin_init', 'cdevroe_tootfaves_settings_init');
 
 function cdevroe_tootfaves_display_access_token() {
     ?>
-    <input type="text" name="cdevroe_tootfaves_access_token" id="cdevroe_tootfaves_access_token" value="<?php echo get_option('cdevroe_tootfaves_access_token'); ?>" />
+    <input type="text" name="cdevroe_tootfaves_access_token" id="cdevroe_tootfaves_access_token" value="<?php esc_attr( get_option('cdevroe_tootfaves_access_token') ); ?>" />
     <?php
 }
 
 function cdevroe_tootfaves_display_instance_url() {
     ?>
-    <input type="text" placeholder="social.lol" name="cdevroe_tootfaves_instance_url" id="cdevroe_tootfaves_instance_url" value="<?php echo get_option('cdevroe_tootfaves_instance_url'); ?>" />
+    <input type="text" placeholder="social.lol" name="cdevroe_tootfaves_instance_url" id="cdevroe_tootfaves_instance_url" value="<?php esc_url( get_option('cdevroe_tootfaves_instance_url') ); ?>" />
     <?php
 }
 

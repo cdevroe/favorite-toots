@@ -30,5 +30,5 @@ export default function save( { attributes } ) {
 		return null;
 	}
 
-	return <div { ...useBlockProps.save() }><strong>Mastodon Favorites</strong></div>;
+	return <div { ...useBlockProps.save() }><strong>Favorite Toots</strong></div>;
 }

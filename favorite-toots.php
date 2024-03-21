@@ -1,9 +1,10 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 /**
  * Plugin Name:       Favorite Toots
  * Description:       Add embeds of your favorite toots from Mastodon to your website using an Editor Block.
  * Plugin URI: 		  https://cdevroe.com/projects/favorite-toots
- * Version:           0.2.2
+ * Version:           0.2.3
  * Requires at least: 6.2
  * Requires PHP:      7.0
  * Author:            Colin Devroe
@@ -20,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /**
  * Load necessary code
- * Load Mastodon Favorites Block
+ * Load Favorite Toots Block
  */
 function cdevroe_tootfaves_init() {
 	require __DIR__ . '/inc_admin.php';

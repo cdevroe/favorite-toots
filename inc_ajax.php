@@ -1,14 +1,15 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 /**
  * Functions used for the wp_ajax_*
  */
 
 function cdevroe_tootfaves_destroy_cache() {
-    if ( ! wp_verify_nonce( $_POST['nonce'], 'cdevroe_tootfaves_ajax_nonce' ) ) {
+    if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'cdevroe_tootfaves_ajax_nonce' ) ) {
         wp_die( 'This page is no longer valid.');
     }
     if ( isset($_POST['postID']) ) {
-        delete_transient( 'cdevroe_tootfaves_cache_' . $_POST['postID'] );
+        delete_transient( 'cdevroe_tootfaves_cache_' . santitize_text_field( $_POST['postID'] ) );
     }
     wp_die();
 }

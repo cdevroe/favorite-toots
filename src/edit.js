@@ -42,7 +42,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div { ...useBlockProps() }><strong>Mastodon Favorites</strong></div>
+			<div { ...useBlockProps() }><strong>Favorite Toots</strong></div>
 		</>
 	);
 }

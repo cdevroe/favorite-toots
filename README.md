@@ -1,10 +1,6 @@
 # Favorite Toots WordPress Plugin
 
-**This plugin should be considered beta.**
-
 Add a list of your favorite toots on Mastodon to any page on your website using a block.
-
-Coming soon to the WordPress Plugin directory. (Currently in review)
 
 ## Version History
 
@@ -12,7 +8,7 @@ See Changelog in readme.txt
 
 ## Contributing
 
-- Please file issues on GitHub. Feedback welcome!
+- Please file issues [on GitHub](https://github.com/cdevroe/favorite-toots/issues). Feedback welcome!
 - Fork the repo and submit a Pull Request with anything you'd like to improve.
 
 ## License
@@ -22,5 +18,6 @@ Favorite Toots is released under the terms of [the GNU General Public License ve
 ## Support
 
 - Toot me at [@cdevroe@mastodon.social](https://mastodon.social/@cdevroe)
+- Join my website's [membership](https://cdevroe.com/join)
 - [Contact me](https://cdevroe.com/about)
 - [Donate](https://cdevroe.com/donate)

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * Renders the Favorite Toots block output
  * Uses each toot favorite URL to request an oEmbed iframe

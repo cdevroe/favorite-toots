@@ -1,5 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * Functions used for the wp_ajax_*
  */
@@ -9,7 +9,7 @@ function cdevroe_tootfaves_destroy_cache() {
         wp_die( 'This page is no longer valid.');
     }
     if ( isset($_POST['postID']) ) {
-        delete_transient( 'cdevroe_tootfaves_cache_' . santitize_text_field( $_POST['postID'] ) );
+        delete_transient( 'cdevroe_tootfaves_cache_' . sanitize_text_field( $_POST['postID'] ) );
     }
     wp_die();
 }

@@ -2,7 +2,7 @@
 Contributors:      cdevroe
 Tags:              block, mastodon, shortcode
 Tested up to:      6.4
-Stable tag:        0.2.3
+Stable tag:        0.2.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,9 @@ I welcome feedback, code, and feature suggestions! You can submit a thread to th
 1. Coming soon
 
 == Changelog ==
+
+= 0.2.4 = 
+* Updates related to submission requests from the WordPress Plugin reviewers
 
 = 0.2.3 = 
 * Updates related to submission requests from the WordPress Plugin reviewers

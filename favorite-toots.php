@@ -3,8 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * Plugin Name:       Favorite Toots
  * Description:       Add embeds of your favorite toots from Mastodon to your website using an Editor Block.
- * Plugin URI: 		  https://cdevroe.com/projects/favorite-toots
- * Version:           0.2.4
+ * Plugin URI: 		  https://cdevroe.com/favorite-toots
+ * Version:           0.2.5
  * Requires at least: 6.2
  * Requires PHP:      7.0
  * Author:            Colin Devroe
@@ -33,34 +33,17 @@ add_action( 'init', 'cdevroe_tootfaves_init' );
 /**
  * Allow iframes
  */
-function cdevroe_tootfaves_allow_iframes( $allowed_tags ){
+function cdevroe_tootfaves_allow_embed_scripts( $allowed_tags ){
     
-	$allowed_tags['iframe'] = array(
-		'align' => true,
-		'allow' => true,
-		'allowfullscreen' => true,
-		'class' => true,
-		'frameborder' => true,
-		'height' => true,
-		'id' => true,
-		'marginheight' => true,
-		'marginwidth' => true,
-		'name' => true,
-		'scrolling' => true,
+	$allowed_tags['script'] = array(
 		'src' => true,
-		'style' => true,
-		'width' => true,
-		'height' => true,
-		'allowFullScreen' => true,
-		'frameborder' => true,
-		'mozallowfullscreen' => true,
-		'title' => true,
-		'webkitAllowFullScreen' => true,
+		'data-allowed-prefixes' => true,
+		'async' => true,
 	);
 
 	return $allowed_tags;
 }
-add_filter( 'wp_kses_allowed_html', 'cdevroe_tootfaves_allow_iframes', 1 );
+add_filter( 'wp_kses_allowed_html', 'cdevroe_tootfaves_allow_embed_scripts', 1 );
 
 /** 
  * Enqueue JavaScript needed to adjust height of iframes

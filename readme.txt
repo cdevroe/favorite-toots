@@ -1,8 +1,8 @@
 === Favorite Toots ===
 Contributors:      cdevroe
 Tags:              block, mastodon, favorites
-Tested up to:      6.5
-Stable tag:        0.2.4
+Tested up to:      6.8
+Stable tag:        0.2.5
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,9 @@ I welcome feedback, code, and feature suggestions! You can submit a thread to th
 - Screenshot 4: [@salginatobel@go5.dev](https://go5.dev/@salginatobel/112136436959884868), [@microseasons@botsin.space](https://botsin.space/@microseasons/112130969075940516)
 
 == Changelog ==
+
+= 0.2.5 = 
+* Bug fixes
 
 = 0.2.4 =
 * Updates related to submission requests from the WordPress Plugin reviewers
